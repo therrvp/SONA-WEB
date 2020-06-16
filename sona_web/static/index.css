@@ -1,0 +1,25 @@
+
+.title{
+      color:white;
+      font-family: fantasy;
+      font-style:normal;
+      font-weight:900;
+      text-align:center;
+      animation-name:grow;
+      animation-duration:1s;
+      animation-fill-mode: forwards;
+}
+body{
+     background-image: url("vector+header.jpg");
+     background-repeat: no-repeat;
+     overflow: hidden;
+   }
+.box{
+  height: 200px;
+  background-color: white;
+  position: fixed;
+  bottom:40%;
+  animation-name:box;
+  animation-duration:4s;
+  animation-fill-mode: forwards;
+}

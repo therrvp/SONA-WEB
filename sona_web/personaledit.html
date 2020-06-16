@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head><title>edit form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+
+<style>
+        @media (min-width: 1100px)
+        {
+         .title{
+               letter-spacing:5px;
+               font-size:70px ;
+               text-shadow: 30px 20px 30px black;
+               }
+    .btn-outline-light{font-size: 25px;
+                        box-shadow:4px 5px 3px white ;
+                        margin-left:25px;
+                    }
+    table {
+                display: flex;
+                flex-wrap: wrap;
+               }
+                    }
+
+
+      @media (orientation:portrait)
+      {
+         .title {
+            letter-spacing:2px;
+            font-size:50px ;
+            text-shadow: 2px 8px 10px black;
+            text-align: center;
+            margin-left: 53 px;
+            }
+            .btn-outline-light{font-size: 35px;
+                                box-shadow: 12px 12px  30px white;
+                                margin: 10px;
+                              }
+            body{overflow: scroll;}
+
+
+
+      }
+                  @keyframes grow { 0%{font-size: 90%;
+                                           opacity: 0;}
+                         }
+                         @-webkit-keyframes AnimationName {
+                             0%{background-position:0% 50%}
+                             50%{background-position:100% 50%}
+                             100%{background-position:0% 50%}
+                         }
+                         @-moz-keyframes AnimationName {
+                             0%{background-position:0% 50%}
+                             50%{background-position:100% 50%}
+                             100%{background-position:0% 50%}
+                         }
+                         @keyframes AnimationName {
+                             0%{background-position:0% 50%}
+                             50%{background-position:100% 50%}
+                             100%{background-position:0% 50%}
+                         }
+
+
+
+</style>
+
+</head>
+<body>
+ <h1 class="title">
+  EDIT
+ </h1>
+ <table class="table-borderless" cellpadding="18"  >
+ <form action="#"  method="post" onsubmit="return ValidateForm(this);">
+ <script type="text/javascript">
+ function ValidateForm(frm)
+ {
+   var bloodgrp=document.getElementById("bloodgrp").innerHTML;
+        function returnbloodgroupId(frm){
+            if (frm==="A+"){
+                return 'A+'
+              }
+            if (frm==="A-"){
+            return 'A-'
+            }
+            if (frm==="B+"){
+            return 'B+'
+            }
+            if (frm==="B-"){
+            return 'B-'
+            }
+            if (frm==="AB+"){
+            return 'AB+'
+            }
+            if (frm==="AB-"){
+            return 'AB-'
+            }
+            if (frm==="O+"){
+              return 'O+'
+              }
+              if (frm==="O-"){
+                return 'O-'
+                }
+                if (frm==="others"){
+                  return 'others'
+                  }
+        }
+        document.getElementById(returnbloodgrpId(bloodgrp)).setAttribute('selected','true');
+
+ var letters =/^[A-Za-z]/;
+ var dob=/^[1-9/-]/;
+      if(frm.Name.value.match(letters))
+        {
+        if(frm.Last_Name.value.match(letters))
+          {
+          if(frm.dob.value.match(dob))
+            {
+            return true;
+            }
+            else
+            {
+              frm.dob.focus();
+            alert('Enter a valid date');
+            return false;
+          }
+          }
+          else
+        {
+        frm.Last_Name.focus();
+        alert('Enter a valid Last name or initial');
+        return false;
+        }
+       }
+      else
+      {
+        frm.Name.focus();
+        alert('Enter a valid Name');
+        return false;
+      }
+}
+ </script>
+
+ <tr class="row">
+      <td class="col-sm-6"  >
+          <label for="Name"><b>Name *</b></label><br>
+          <input class="btn btn-outline-light" class="form-control form-control-lg"  name="Name" type="text" maxlength=""style=" max-width: 1600px ; min-width:50%" placeholder="RRVP" required>
+      </td>
+      <td class="col-sm-4" >
+       <label for="Last_Name"><b>Last name *</b></label><br>
+       <input class="btn btn-outline-light" class="form-control form-control-lg"  name="Last_Name" type="text" maxlength="" style="max-width:1300px;min-width:50%" placeholder="RRVP" required>
+      </td>
+</tr>
+
+<tr class="row" >
+  <td  >
+    <label for="dob"><b>DOB*</b></label><br>
+    <input class="btn btn-outline-light" class="form-control form-control-lg"  name="dob" type="text" maxlength="10" style="max-width:500px;min-width:200px" placeholder="RRVP" required>
+  </td>
+</tr>
+
+<tr class="row">
+  <td class="col-sm-4" >
+    <label for="height"><b>Height (cm)</b></label><br />
+      <input class="btn btn-outline-light"class="form-control form-control-lg"  name="Height" type="number" maxlength="5" style="max-width: 200px;min-width:100px" placeholder="RRVP" required>
+    </td>
+    <td  class="col-sm-4" >
+    <label for="weight"><b>Weight (kg)</b></label><br />
+      <input class="btn btn-outline-light"class="form-control form-control-lg"  name="Weight" type="number" maxlength="5" style="max-width:200px;min-width:100px" placeholder="RRVP" requird>
+    </td>
+   </tr>
+
+
+<tr class="row">
+   <td  >
+     <label for="Blood Group"><b>Blood Group</b> </label><br />
+     <div id="bloodgrp" style="display:none">A+</div>
+     <select class="btn btn-outline-light"class="form-control form-control-lg" name="blood group" style="max-width: 150px" placeholder="RRVP" required>
+
+        <option value="A+" id="A+" >A +ve</option>
+        <option value="A-" id="A-">A -ve</option>
+        <option value="B+" id="B+">B +ve</option>
+        <option value="B-" id="B-">B -ve</option>
+        <option value="AB+" id="AB+">AB +ve</option>
+        <option value="AB-" id="AB-">AB -ve</option>
+        <option value="O+" id="O+">O +ve</option>
+        <option value="O-" id="O-">O -ve</option>
+        <option value="others" id="others">others <option>
+     </select>
+   </td>
+</tr>
+
+
+<tr class="row">
+  <td  >
+    <label for="identification marks"><b>Identification marks</b></label><br />
+      <textarea  cols="30" rows="5"class="btn btn-outline-light" class="form-control form-control-lg"  name="identification marks"  placeholder="RRVP"></textarea>
+    </td>
+</tr>
+
+
+<tr class="row" >
+  <td class="col-sm-4"  >
+    <label for="communication address"><b>communication address</b></label><br />
+      <textarea cols="30" style="min-width:200px" rows="3"class="btn btn-outline-light" class="form-control form-control-lg"  name="communication address"  placeholder="RRVP" required></textarea>
+    </td>
+
+    <td class="col-sm-5" >
+      <label for="permanent address"><b>permanent address</b></label><br />
+        <textarea  cols="30" style="min-width:200px" rows="3" class="btn btn-outline-light"class="form-control form-control-lg"  name="permanent address"  placeholder="RRVP" required></textarea>
+      </td>
+</tr>
+
+
+ <tr class="row">
+  <td class="col-sm-3"  >
+    <label for=District><b>District</b></label><br />
+    <input style="min-width:50px" class="btn btn-outline-light"class="form-control form-control-lg"  name="Districts" type="text" maxlength="" max-width="10%" placeholder="RRVP" required>
+    <td class="col-sm-3">
+      <label for=State><b>State</b></label><br />
+    <input  style="min-width:50px"class="btn btn-outline-light"class="form-control form-control-lg"  name="State" type="text" maxlength=""placeholder="RRVP" required>
+  </td>
+
+  <td class="col-sm-3" >
+    <label for=Country><b>Country</b></label><br />
+    <input  style="min-width:200px" class="btn btn-outline-light"class="form-control form-control-lg"  name="Country" type="text" maxlength="" placeholder="RRVP" required>
+    <td class="col-sm-3">
+      <label for=PINCODE><b>PINCODE</b></label><br />
+    <input style="min-width:200px" class="btn btn-outline-light"class="form-control form-control-lg"  name="PINCODE" type="number" maxlength=""  placeholder="RRVP" required>
+  </td>
+ </tr>
+ <tr class="row">
+   <td >
+     <label for=fatherno.><b>Father's / Guardian's mobile number</b></label><br />
+   <input class="btn btn-outline-light"class="form-control form-control-lg"  name="fatherno." type="number" maxlength="13"  placeholder="RRVP" required>
+ </td>
+ </tr>
+ <tr class="row">
+   <td >
+     <label for=motherno.><b> Mother's mobile number</b></label><br />
+   <input class="btn btn-outline-light"class="form-control form-control-lg"  name="motherno." type="number" maxlength="13"  placeholder="RRVP">
+ </td>
+ </tr>
+ <tr class="row">
+   <td >
+     <label for=selfno.><b> Your mobile number</b></label><br />
+   <input class="btn btn-outline-light"class="form-control form-control-lg"  name="selfno." type="number" maxlength="13"  placeholder="RRVP" required>
+ </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr class="row">
+  <td></td>
+
+
+ <td  colspan="3" class="col-sm-10"  >
+ <button  type="submit" value="Submit/" class="btn btn-info btn-lg btn-block" class="form-control form-control-lg">SUBMIT</button>
+  </td>
+</tr>
+
+</table>
+
+
+
+
+
+
+</form>
+</body>
+
+
+</html>

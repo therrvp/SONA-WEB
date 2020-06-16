@@ -1,0 +1,68 @@
+
+.title{
+      color:white;
+      font-family: fantasy;
+      font-style:normal;
+      font-weight:900;
+      text-align:center;
+      animation-name:grow;
+      animation-duration:1s;
+      animation-fill-mode: forwards;
+}
+body{
+  background: linear-gradient(270deg, #1a00c9, #fe4a00, #1a00c9);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 49s ease infinite;
+    -moz-animation: AnimationName 49s ease infinite;
+    animation: AnimationName 49s ease infinite;
+    overflow: hidden;
+}
+
+.box{
+  background-color: black ;#383838;
+  position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  animation-name:box;
+  animation-duration:4s;
+  animation-fill-mode: forwards;
+
+  border-radius: 25px;
+}
+.text{
+  border-top: 20%;
+  color:white;
+  font-family: fantasy;
+  font-style:normal;
+  font-weight:900;
+  text-align:center;
+  letter-spacing:5px;
+  font-size:40px ;
+  text-shadow: 30px 20px 30px black;
+}
+
+
+label{ font-size: 20px;
+        color:white;}
+
+.btn-dark{
+          background: linear-gradient(270deg, #1a00c9, #fe4a00);
+          border-radius: 25px ;
+          margin: 15px;
+
+        }
+ .btn-info{   box-shadow: 12px 12px  30px blue;
+   margin: 10px; }
+ .fa-eye{font-size: 20px;
+          color: white;
+         margin-left: 50%;
+        }
+.dropdown-item{background: linear-gradient(270deg, #1a00c9, #fe4a00);
+               font-size: 30px;}
+               img{object-fit: cover;
+                    border-radius: 50%;
+                    width:inherit;
+                     height:inherit;
+                     }

@@ -1,0 +1,76 @@
+<!Doctype html>
+<html>
+<head>
+<title>personal details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+
+
+<style>
+
+@media (min-width: 769px)
+           {
+
+
+          .title{
+                letter-spacing:5px;
+                font-size:70px ;
+                text-shadow: 13px 20px 6px black;
+                   }
+
+
+
+
+         }
+@media (max-width:768px){
+
+   .title {
+
+   letter-spacing:2px;
+   font-size:30px ;
+   text-shadow: 2px 5px 10px black;
+   }
+   .btn-light{top:3%;}
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="title">
+  This is what you are!!
+</div>
+<div class="text">
+    <p></p><br>
+   <p> {{username}}</p><p>{{2}} </p><p>{{3}} </p><p> {{3}}</p><p>{{4}} </p><p>{{5}} </p>
+</div>
+<div class="btn btn-light">EDIT</div>
+
+
+
+
+
+
+
+</html>

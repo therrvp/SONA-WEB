@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head><title>round shape</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{{url_for('static',filename='mainstyle.css')}}">
+<link rel="stylesheet" href="mainstyle.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@media (min-width:1100px)
+         {
+
+img{ background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.90snews.com%2Fsunny-leones-business-is-spreading-in-the-millions-not-in-films-but-also-earning-millions-from-here%2F&psig=AOvVaw2I1HbqpcwUS9Y_wsWg4W84&ust=1592252808334000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiGzLGSguoCFQAAAAAdAAAAABAD")}
+          .title{
+                letter-spacing:5px;
+                font-size:70px ;
+                text-shadow: 13px 20px 6px black;
+                   }
+                   .btn-dark { position: absolute;
+
+                          font-size: 200%;
+                          filter:drop-shadow(20px 20px  20px black);
+                          animation-name:box;
+                          animation-duration:4s;
+                          animation-fill-mode: forwards;
+
+                          border-radius: 25px ;
+                     top:2%;
+                                 left:2%;
+                                 height: 10%;
+
+                      }
+
+
+
+                  }
+@media  (orientation:portrait){
+   .title {
+
+   letter-spacing:2px;
+   font-size:30px ;
+   text-shadow: 2px 5px 10px black;
+   }
+
+ .menu{
+
+ left: 0%;
+ right: 30%;
+ width: 0px;
+ height: 50px;
+
+ }
+ .menu-item,.menu-open-button
+             {width: 130px;
+              height: 130px;
+              bottom: 40%;
+              left:12%;
+                    }
+            .lines{
+              width: 30px;
+              height: 4px;
+              left: 46%;
+            }
+            .menu-open-button{
+                            -webkit-transform: scale(2, 2) translate3d(0, 0, 0);
+                            transform: scale(1.5,1.5) translate3d(0, 0, 0);
+                          }
+
+
+        .btn-dark{ position:absolute;
+
+               right:4%;
+               bottom:2%;
+               font-size: 150%;
+                text-align: center;
+               animation-name:box;
+               animation-duration:4s;
+               animation-fill-mode: forwards;
+
+               border-radius: 25px ;
+           }
+ }
+
+ @keyframes box { 0%{ opacity: 0;}}
+ @-webkit-keyframes AnimationName {
+     0%{background-position:0% 50%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 50%}
+ }
+ @-moz-keyframes AnimationName {
+     0%{background-position:0% 50%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 50%}
+ }
+ @keyframes AnimationName {
+     0%{background-position:0% 50%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 50%}
+ }
+
+
+</style>
+</head>
+<body>
+<h1 class="title">
+  HI ! {{username}}
+</h1>
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+  </label>
+
+   <a href="user"  class="menu-item white"> <img></a>
+   <a href="documents" class="menu-item green"> DOC </a>
+   <a href="activitylog" class="menu-item red"> <i class="fa fa-heart"></i> </a>
+   <a href="support" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+   <a href="https://cgpa-calc-2019.web.app/" class="menu-item orange"> <i class="fa fa-star"></i> </a>
+   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+</nav>
+<button href="first.html" class="btn btn-dark btn-lg " class="form-control form-control-lg">BACK</button>
+
+
+</body>
+</html>

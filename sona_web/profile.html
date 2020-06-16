@@ -1,0 +1,256 @@
+<!Doctype html>
+<html>
+<head>
+<title>USER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+
+@media (min-width: 769px)
+           {
+             .dropdown-item{font-size: 20px;
+            color: white;}
+
+
+          .title{
+                letter-spacing:5px;
+                font-size:70px ;
+                text-shadow: 13px 20px 6px black;
+                   }
+
+
+    #webapp_cover
+    {
+    position: absolute;
+    top: 10%;
+    right: 95%;
+    width: 35px;
+    transform: translateY(-50%) scale(2);
+         }
+    #menu_button
+    {
+     width: 39px;
+     height:50px;
+     overflow: hidden;
+    }
+    #menu_checkbox
+    {
+    display:none;
+    }
+    #menu_label
+    {
+    position: relative;
+    display: block;
+    height: 99px;
+    cursor: pointer;
+         }
+    #menu_label:before, #menu_label:after, #menu_text_bar
+         {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: white;
+         }
+
+         #menu_label:before, #menu_label:after
+         {
+          content: '';
+          transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+         }
+         #menu_label:before
+         {
+         top: 0;
+         }
+         #menu_label:after
+         {
+            top: 12px;
+         }
+
+         #menu_text_bar
+         {
+             top: 24px;
+         }
+
+         #menu_text_bar:before
+         {
+             content: 'RRVP';
+             position: absolute;
+             top: 5px;
+             right: 0;
+             left: 0;
+             color: white;
+             font-size: 12px;
+             font-weight: bold;
+             font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+             text-align: center;
+         }
+
+
+         #menu_checkbox:checked + #menu_label:before
+         {
+             left: -9px;
+         }
+
+         #menu_checkbox:checked + #menu_label:after
+         {
+             left: 9px;
+         }
+
+
+
+
+         }
+@media (max-width:768px){
+  .dropdown-item{
+                 color: white;
+               }
+   .title {
+
+   letter-spacing:2px;
+   font-size:30px ;
+   text-shadow: 2px 5px 10px black;
+   }
+
+   #webapp_cover
+   {
+    position: absolute;
+    top: 7%;
+    right: 80%;
+    width: 55px;
+    margin: 0 auto;
+    transform: translateY(-50%) scale(1);
+   }
+   #menu_button
+   {
+    width: 34px;
+    height:50px;
+    overflow: hidden;
+   }
+   #menu_checkbox
+   {
+    display: none;
+   }
+   #menu_label
+   {
+   position: relative;
+   display: block;
+   height: 39px;
+   cursor: pointer;
+   }
+   #menu_label:before, #menu_label:after, #menu_text_bar
+   {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+   }
+   #menu_label:before, #menu_label:after
+   {
+   content: '';
+   transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+   }
+   #menu_label:before
+   {
+    top: 0;
+   }
+  #menu_label:after
+   {
+    top: 12px;
+   }
+  #menu_text_bar
+   {
+   top: 24px;
+   }
+  #menu_text_bar:before
+   {
+       content: 'RRVP';
+       position: absolute;
+       top: 5px;
+       right: 0;
+       left: 0;
+       color: white;
+       font-size: 12px;
+       font-weight: bold;
+       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+       text-align: center;
+   }
+
+   #menu_checkbox:checked + #menu_label:before
+   {
+       left: -39px;
+   }
+
+   #menu_checkbox:checked + #menu_label:after
+   {
+       left: 39px;
+   }
+
+
+
+
+
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="title">
+  PROFILE
+
+</div>
+<div class="text">
+  <p></p><br>
+<p> {{username}}</p><p>{{2}} </p><p>{{3}} </p><p> {{3}}</p><p>{{4}} </p><p>{{5}} </p>
+</div>
+<div id="webapp_cover">
+  <div class="dropdown">
+   <div data-toggle="dropdown">
+  <div id="menu_button"  id="dropdownMenuButton"  >
+    <input type="checkbox"   id="menu_checkbox">
+    <label for="menu_checkbox" id="menu_label">
+      <div id="menu_text_bar"></div>
+    </label>
+    <div  class="dropdown-menu" >
+    <a class="dropdown-item" href="personal">Personal</a>
+    <a class="dropdown-item" href="family">Family</a>
+    <a class="dropdown-item" href="acadamic">Acadamic</a>
+    <a class="dropdown-item" href="extra-curriculars">Extra-Curriculars</a>
+    <a class="dropdown-item" href="others">Others</a>
+  </div>
+  </div>
+</div></div></div
+>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<body>
+</html>

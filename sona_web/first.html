@@ -1,0 +1,191 @@
+<!Doctype html>
+<html>
+<head>
+<title>SONA DATA BASE</title>
+<meta name="viewport" content="width=device-width, height=device-height,minimum-scale=1,initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+
+<style>
+        @media (min-width:1100px ) and (orientation:landscape)
+        {
+         .title{
+               letter-spacing:5px;
+               font-size:70px ;
+               text-shadow: 30px 20px 30px black;
+               }
+
+          .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+               position:fixed;
+               height:65%;
+               width: 500px;
+               left: 32%;
+
+               top:25%;
+
+               filter:drop-shadow(50px 40px  30px black);
+               }
+               .btn-outline-light{
+                                  font-size: 230%;
+                                  border-radius: 25px 2px;
+                                  filter:drop-shadow(12px 12px  30px white);
+
+                                  }
+                label{ font-size: 30px;
+                    }
+                 .btn-dark{
+
+                        left:42%;
+                        bottom:30px;
+                        font-size: 230%;
+
+                        animation-name:box;
+                        animation-duration:4s;
+                        animation-fill-mode: forwards;
+                    }
+
+                     }
+
+      @media  (max-width:1099px) , (orientation:portrait)
+      {
+
+         .title {
+            letter-spacing:2px;
+            font-size:18px ;
+            text-shadow: 2px 8px 10px black;
+            font-family: fantasy;
+            font-style:normal;
+            font-weight:900;
+            text-align:center;
+            }
+
+            .box{
+                 display: flex;
+                 flex-direction: row;
+                justify-content: center;
+                position:sticky;
+                right:10%;
+                width: 80%;
+                left: 10%;
+                margin-top: 30%;
+
+                filter:drop-shadow(30px 38px  30px black);
+                   }
+                   .btn-outline-light{
+                                      font-size: 100%;
+                                       border-radius: 25px 2px;
+                                       width:auto;
+                                    }
+                    label{
+                         font-size: 17px;
+
+                         }
+
+
+                 }
+
+
+     @keyframes grow { 0%{font-size: 90%;
+                           opacity: 0;}
+                     }
+     @keyframes box { 0%{ opacity: 0;}}
+     @-webkit-keyframes AnimationName {
+         0%{background-position:0% 50%}
+         50%{background-position:100% 50%}
+         100%{background-position:0% 50%}
+     }
+     @-moz-keyframes AnimationName {
+         0%{background-position:0% 50%}
+         50%{background-position:100% 50%}
+         100%{background-position:0% 50%}
+     }
+     @keyframes AnimationName {
+         0%{background-position:0% 50%}
+         50%{background-position:100% 50%}
+         100%{background-position:0% 50%}
+     }
+
+
+</style>
+</head>
+<body>
+
+ <h1 class="title">
+  SONA  COLLEGE  OF  TECHNOLOGY
+ </h1>
+
+<div class="box"  >
+<form action="#" method="post" onsubmit="return ValidateForm(this);">
+ <table  cellpadding="15">
+
+
+
+<tr>
+  <td>
+     <label for=email>Your mail ID</label><br>
+<input class="btn btn-outline-light"  name="email" type="email"  placeholder="sonatech.ac.in" required>
+</td>
+</tr>
+<tr>
+  <td>
+     <label for=password>Password</label><i class="fa fa-eye"   type="checkbox" onclick="view()"></i>
+     <script>
+                 function view() {
+                 var x = document.getElementById("password");
+                 if (x.type === "password") {
+                 x.type = "text";
+                 } else {
+                 x.type = "password";
+                }
+               }
+</script>
+    <br>
+  <input class="btn btn-outline-light" id="password" name="password"  type="password" value="{{pass}}" required>
+
+ </td>
+
+</tr>
+<tr>
+
+  <td style="text-align:center">
+       <a href="#"> forgot password? RESET</a>
+  </td>
+</tr>
+
+<tr><td style="text-align:center">
+
+<button type="submit" value="Submit/" class="btn btn-dark btn-lg " class="form-control form-control-lg">LOGIN</button>
+</td></tr>
+
+</table>
+
+</div>
+<script type="text/javascript">
+function ValidateForm(frm)
+{
+  if(frm.email.value.indexOf("sonatech.ac.in")>=1)
+  {
+  return true;
+    }
+  else
+  {
+ alert('Enter your sonatech mail ID');
+ return false;
+  }
+
+}
+
+
+</script>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
